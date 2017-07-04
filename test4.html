@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="angular1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body ng-app="app" ng-controller="ctrl">  
+	
+	<input type="text" ng-model="ipt"/>
+	<button ng-click="tap()">获取数据</button>
+	
+	<ul>
+		<li ng-repeat="item in arr">{{item}}</li>
+	</ul>
+	
+</body>
+<script type="text/javascript">
+	angular.module('app',[])
+	.controller('ctrl',function($scope,$http){
+		$scope.tap=function(){
+			$http({
+				method:'JSONP',
+				url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+$scope.ipt+'&cb=JSON_CALLBACK'
+			}).success(function(data){
+				console.log(data.s)
+				$scope.arr=data.s
+			})
+		}
+		
+		
+		
+	})
+</script>
+</html>

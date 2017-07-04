@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../angular.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="../bootstrap.min.css"/>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	#out{width:500px;overflow:hidden;margin:20px auto;}
+</style>
+</head>
+<body ng-app="">
+<div id="out">
+	<div class="input-group">
+		<div class="input-group-addon">账号</div>
+		<input type="text" class="form-control" placeholder="请输入账号" ng-model="zh"/>	
+	</div>
+	<div class="input-group">
+		<div class="input-group-addon">密码</div>
+		<input type={{ipt?"text":"password"}} class="form-control" placeholder="请输入密码" ng-model="mm"/>	
+	</div>
+	<div>
+		 男：<input type="radio" name="a" value="男" ng-model="sex"/>
+		 女：<input type="radio" name="a" value="女" ng-model="sex"/>
+	</div>
+	<div>
+		信息展示：<input type="checkbox" ng-model="ipt2"/>
+		密码显示：<input type="checkbox" ng-model="ipt"/>
+	</div>
+	<h1>信息显示如下:</h1>
+	<table class="table">
+		<tr>
+			<td>账号:{{ipt2?zh:''}}</td>
+		</tr>
+		<tr>
+			<td>密码:{{ipt2?mm:''}}</td>
+		</tr>
+		<tr>
+			<td>性别:{{ipt2?sex:''}}</td>
+		</tr>
+	</table>
+</div>	
+	
+	
+	
+	
+</body>
+</html>

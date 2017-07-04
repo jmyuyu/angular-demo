@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="angular1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+	
+	{{name}}
+	
+	<hr />
+	
+	
+	<div first></div>
+	
+	<div second></div>
+	
+	<div three></div>
+	
+
+	
+
+	
+</body>
+<script type="text/javascript">
+	angular.module('app',[])
+	.directive('first',function(){
+		return{
+			restrict:'ECMA',
+			replace:true,
+			scope:true,
+			template:'<h1>one自定义指令<input type="text" ng-model="name"/><p>{{name}}</p><hr/></h1>'
+		}
+	})
+	.directive('second',function(){
+		return{
+			restrict:'ECMA',
+			replace:true,
+			scope:false,
+			template:'<h1>two自定义指令<input type="text" ng-model="name"/><p>{{name}}</p><hr/></h1>'	
+		}
+	})
+	.directive('three',function(){
+		return{
+			restrict:'ECMA',
+			replace:true,
+			scope:{},
+			template:'<h1>three自定义指令<input type="text" ng-model="name"/><p>{{name}}</p><hr/></h1>'	
+		}
+	})
+	.controller('ctrl',function($scope){
+		$scope.name='hello'
+	})
+	
+//	scope:true:继承父级作用域,同时开辟自己的作用域,操作作用域自己的作用域
+//	scope:false:继承父级作用域,同时开辟自己的作用域,操作 自己与父级 作用域
+//	scope:｛｝:不继承父级作用域,只开辟自己的作用域,操作 自己作用域
+
+	
+	
+	
+	
+	
+	
+</script>
+</html>

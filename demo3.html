@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../angular.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body ng-app="">
+	
+	<!--<div ng-controller="ctrl">
+		<div>{{a}}</div>
+		
+		<button ng-click="tap()">点击事件</button>
+		
+		<h2>{{b}}</h2>
+		
+	</div>	
+	
+	<div ng-controller="ctrl1">
+		<hr />
+		<div>{{a}}</div>
+		<h2>{{b}}</h2>
+	</div>-->
+	<div ng-controller='ctrl'>
+		<input type="text" ng-model='apt'/>
+		<button ng-click='tap()'>打招呼</button>
+		<h2>{{a}}</h2>
+	</div>
+	
+	
+	
+	
+	
+</body>
+<script type="text/javascript">
+//全局控制器--低版本
+//	function ctrl($scope,$rootScope){
+//		
+//		$scope.a=1111
+//		$scope.tap=function(){
+//			alert('hello controller')
+//		}
+//		
+//		$rootScope.b='hello 控制器'
+//		
+//	}
+//
+//
+//	function ctrl1($scope){
+//		
+//		
+//		$scope.a=22222
+//	}
+function ctrl($scope){
+//	$scope.apt===value
+	$scope.tap=function(){
+		$scope.a	='hello－－'+$scope.apt
+		$scope.apt=''
+	}
+}
+
+
+
+
+
+
+</script>
+</html>
